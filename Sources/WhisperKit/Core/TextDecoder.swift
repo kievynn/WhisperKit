@@ -667,9 +667,9 @@ open class TextDecoder: TextDecoding, WhisperMLModel {
         let avgLogProbs = sumLogProbs / Float(filteredLogProbs.count)
 
         var tokenProbs = [[Int: Float]]()
-        for (index, token) in filteredTokens.enumerated() {
-            tokenProbs.append([token: filteredLogProbs[index]])
-        }
+        // for (index, token) in filteredTokens.enumerated() {
+        //     tokenProbs.append([token: filteredLogProbs[index]])
+        // }
 
         let wordTokens = filteredTokens.filter { $0 < tokenizer.specialTokens.specialTokenBegin }
         let compressionRatio = compressionRatio(of: wordTokens)
